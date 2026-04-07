@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account ARR Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Account ARR Tracker</h1>
+    <p class="subtitle">Track accounts organized by Annual Recurring Revenue (ARR) tier</p>
+  </header>
+
+  <main>
+    <!-- Add Account Form -->
+    <section class="add-account-section">
+      <h2>Add Account</h2>
+      <form id="accountForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="accountName">Account Name</label>
+            <input type="text" id="accountName" placeholder="e.g. Acme Corp" required />
+          </div>
+          <div class="form-group">
+            <label for="accountOwner">Account Owner</label>
+            <input type="text" id="accountOwner" placeholder="e.g. Jane Smith" />
+          </div>
+          <div class="form-group">
+            <label for="accountARR">ARR ($)</label>
+            <input type="number" id="accountARR" placeholder="e.g. 500000" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="accountStage">Stage</label>
+            <select id="accountStage">
+              <option value="Prospect">Prospect</option>
+              <option value="Active">Active</option>
+              <option value="At Risk">At Risk</option>
+              <option value="Churned">Churned</option>
+            </select>
+          </div>
+          <div class="form-group form-group--btn">
+            <button type="submit" class="btn-add">Add Account</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="summary-section">
+      <div class="summary-card" id="summary-tier1">
+        <div class="summary-label">$1M+</div>
+        <div class="summary-count" id="count-tier1">0</div>
+        <div class="summary-arr" id="arr-tier1">$0</div>
+      </div>
+      <div class="summary-card" id="summary-tier2">
+        <div class="summary-label">$750K – $999K</div>
+        <div class="summary-count" id="count-tier2">0</div>
+        <div class="summary-arr" id="arr-tier2">$0</div>
+      </div>
+      <div class="summary-card" id="summary-tier3">
+        <div class="summary-label">$500K – $749K</div>
+        <div class="summary-count" id="count-tier3">0</div>
+        <div class="summary-arr" id="arr-tier3">$0</div>
+      </div>
+      <div class="summary-card" id="summary-tier4">
+        <div class="summary-label">$250K – $499K</div>
+        <div class="summary-count" id="count-tier4">0</div>
+        <div class="summary-arr" id="arr-tier4">$0</div>
+      </div>
+      <div class="summary-card" id="summary-tier5">
+        <div class="summary-label">$0 – $249K</div>
+        <div class="summary-count" id="count-tier5">0</div>
+        <div class="summary-arr" id="arr-tier5">$0</div>
+      </div>
+    </section>
+
+    <!-- Tier Tables -->
+    <section class="tiers-section">
+
+      <!-- Tier 1: $1,000,000+ -->
+      <div class="tier-block tier-block--1" id="tier1">
+        <div class="tier-header">
+          <span class="tier-badge tier-badge--1">Tier 1</span>
+          <h2>$1,000,000 and Above</h2>
+          <span class="tier-total" id="total-tier1">Total ARR: $0</span>
+        </div>
+        <table class="account-table">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <th>Account Owner</th>
+              <th>ARR</th>
+              <th>Stage</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-tier1">
+            <tr class="empty-row"><td colspan="5">No accounts in this tier</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tier 2: $750,000 – $999,999 -->
+      <div class="tier-block tier-block--2" id="tier2">
+        <div class="tier-header">
+          <span class="tier-badge tier-badge--2">Tier 2</span>
+          <h2>$750,000 to $999,999</h2>
+          <span class="tier-total" id="total-tier2">Total ARR: $0</span>
+        </div>
+        <table class="account-table">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <th>Account Owner</th>
+              <th>ARR</th>
+              <th>Stage</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-tier2">
+            <tr class="empty-row"><td colspan="5">No accounts in this tier</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tier 3: $500,000 – $749,999 -->
+      <div class="tier-block tier-block--3" id="tier3">
+        <div class="tier-header">
+          <span class="tier-badge tier-badge--3">Tier 3</span>
+          <h2>$500,000 to $749,999</h2>
+          <span class="tier-total" id="total-tier3">Total ARR: $0</span>
+        </div>
+        <table class="account-table">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <th>Account Owner</th>
+              <th>ARR</th>
+              <th>Stage</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-tier3">
+            <tr class="empty-row"><td colspan="5">No accounts in this tier</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tier 4: $250,000 – $499,999 -->
+      <div class="tier-block tier-block--4" id="tier4">
+        <div class="tier-header">
+          <span class="tier-badge tier-badge--4">Tier 4</span>
+          <h2>$250,000 to $499,999</h2>
+          <span class="tier-total" id="total-tier4">Total ARR: $0</span>
+        </div>
+        <table class="account-table">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <th>Account Owner</th>
+              <th>ARR</th>
+              <th>Stage</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-tier4">
+            <tr class="empty-row"><td colspan="5">No accounts in this tier</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tier 5: $0 – $249,999 -->
+      <div class="tier-block tier-block--5" id="tier5">
+        <div class="tier-header">
+          <span class="tier-badge tier-badge--5">Tier 5</span>
+          <h2>$0 to $249,999</h2>
+          <span class="tier-total" id="total-tier5">Total ARR: $0</span>
+        </div>
+        <table class="account-table">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <th>Account Owner</th>
+              <th>ARR</th>
+              <th>Stage</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-tier5">
+            <tr class="empty-row"><td colspan="5">No accounts in this tier</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
